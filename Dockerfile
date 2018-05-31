@@ -1,6 +1,6 @@
 FROM maven:onbuild AS buildenv
   
-FROM openjdk:jre-alpine
+FROM openjdk:8-jdk
 COPY --from=buildenv /usr/src/app/target/helloworld-rest-*.jar /opt/helloworld-rest.jar
 EXPOSE 8080
 
